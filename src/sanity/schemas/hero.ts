@@ -4,7 +4,6 @@ export default defineType({
     name: 'hero',
     title: 'Homepage Hero',
     type: 'document',
-    liveEdit: true,
     fields: [
         defineField({
             name: 'title',

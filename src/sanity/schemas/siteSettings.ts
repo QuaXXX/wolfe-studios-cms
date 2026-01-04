@@ -4,7 +4,6 @@ export default defineType({
     name: 'siteSettings',
     title: 'Website Settings',
     type: 'document',
-    liveEdit: true,
     groups: [
         { name: 'header', title: 'Header' },
         { name: 'sections', title: 'Section Titles' },

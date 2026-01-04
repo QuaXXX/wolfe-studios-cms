@@ -4,7 +4,6 @@ export default defineType({
     name: 'feature',
     title: 'Feature',
     type: 'document',
-    liveEdit: true,
     fields: [
         defineField({
             name: 'text',

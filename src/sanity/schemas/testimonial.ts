@@ -4,7 +4,6 @@ export default defineType({
     name: 'testimonial',
     title: 'Client Testimonial',
     type: 'document',
-    liveEdit: true,
     fields: [
         defineField({
             name: 'quote',
