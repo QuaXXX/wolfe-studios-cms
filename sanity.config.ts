@@ -119,8 +119,11 @@ export default defineConfig({
     dataset,
 
     plugins: [
-        structureTool({ structure: simpleStructure }),
-        // Removed visionTool - confusing for non-tech users
+        structureTool({
+            name: 'content',
+            title: 'Edit Your Website',
+            structure: simpleStructure
+        }),
     ],
 
     schema: {
