@@ -2,20 +2,21 @@ import { defineType, defineField } from 'sanity'
 
 export default defineType({
     name: 'step',
-    title: 'How It Works - Step',
+    title: 'How It Works Step',
     type: 'document',
     fields: [
         defineField({
             name: 'stepNumber',
             title: 'Step Number',
             type: 'number',
-            description: 'Order of this step (1, 2, 3...)',
+            description: '💡 Which step is this? (1, 2, or 3)',
             validation: (Rule) => Rule.required().min(1).max(10),
         }),
         defineField({
             name: 'title',
             title: 'Step Title',
             type: 'string',
+            description: '💡 Short title for this step. Example: "Share Your Current Site"',
             validation: (Rule) => Rule.required().max(50),
         }),
         defineField({
@@ -23,6 +24,7 @@ export default defineType({
             title: 'Step Description',
             type: 'text',
             rows: 2,
+            description: '💡 Brief explanation of what happens in this step (1-2 sentences)',
             validation: (Rule) => Rule.required().max(150),
         }),
     ],

@@ -2,29 +2,29 @@ import { defineType, defineField } from 'sanity'
 
 export default defineType({
     name: 'differentiator',
-    title: 'Why Us - Differentiator',
+    title: 'Why Choose Us',
     type: 'document',
     fields: [
         defineField({
             name: 'title',
-            title: 'Title',
+            title: 'Card Title',
             type: 'string',
-            description: 'Short headline (e.g., "One person. Direct communication.")',
+            description: '💡 Short, punchy headline. Example: "One person. Direct communication."',
             validation: (Rule) => Rule.required().max(50),
         }),
         defineField({
             name: 'description',
-            title: 'Description',
+            title: 'Card Description',
             type: 'text',
             rows: 2,
-            description: 'Explanation text for this point',
+            description: '💡 Explain why this matters to customers (1-2 sentences)',
             validation: (Rule) => Rule.required().max(150),
         }),
         defineField({
             name: 'order',
             title: 'Display Order',
             type: 'number',
-            description: 'Order in the grid (1 = first)',
+            description: '💡 Position on the page (1 = first, 2 = second, etc.)',
         }),
     ],
     orderings: [
@@ -41,8 +41,7 @@ export default defineType({
         },
         prepare({ title, order }) {
             return {
-                title: title,
-                subtitle: order ? `Order: ${order}` : 'No order set',
+                title: order ? `${order}. ${title}` : title,
             }
         },
     },

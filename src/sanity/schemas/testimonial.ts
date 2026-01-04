@@ -2,42 +2,42 @@ import { defineType, defineField } from 'sanity'
 
 export default defineType({
     name: 'testimonial',
-    title: 'Testimonial',
+    title: 'Client Testimonial',
     type: 'document',
     fields: [
         defineField({
             name: 'quote',
-            title: 'Quote',
+            title: 'What They Said',
             type: 'text',
             rows: 3,
-            description: 'The testimonial text from the client',
+            description: '💡 The testimonial quote from your client',
             validation: (Rule) => Rule.required().max(300),
         }),
         defineField({
             name: 'authorName',
-            title: 'Author Name',
+            title: 'Client Name',
             type: 'string',
-            description: 'Name of the person giving the testimonial',
+            description: '💡 Who said this?',
             validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'authorRole',
-            title: 'Author Role/Company',
+            title: 'Title / Company',
             type: 'string',
-            description: 'Their title or company name (e.g., "Owner, Acme Corp")',
+            description: '💡 Their job title or company. Example: "Owner, ABC Company"',
         }),
         defineField({
             name: 'authorImage',
-            title: 'Author Photo',
+            title: 'Photo (Optional)',
             type: 'image',
-            description: 'Optional photo of the testimonial author',
+            description: '💡 A headshot of the client (looks more personal!)',
             options: { hotspot: true },
         }),
         defineField({
             name: 'order',
             title: 'Display Order',
             type: 'number',
-            description: 'Order in the testimonials section (1 = first)',
+            description: '💡 Which testimonial shows first? (1 = first)',
         }),
     ],
     orderings: [

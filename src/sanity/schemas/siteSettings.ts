@@ -2,48 +2,93 @@ import { defineType, defineField } from 'sanity'
 
 export default defineType({
     name: 'siteSettings',
-    title: 'Site Settings',
+    title: 'Website Settings',
     type: 'document',
+    groups: [
+        { name: 'header', title: 'Header' },
+        { name: 'sections', title: 'Section Titles' },
+        { name: 'seo', title: 'SEO' },
+    ],
     fields: [
+        // Header
         defineField({
             name: 'siteName',
-            title: 'Site Name',
+            title: 'Website Name',
             type: 'string',
-            description: 'Appears in the header and browser tab',
+            group: 'header',
+            description: '💡 Your business name (shows in the top-left corner)',
             validation: (Rule) => Rule.required(),
-        }),
-        defineField({
-            name: 'siteDescription',
-            title: 'Site Description',
-            type: 'text',
-            rows: 2,
-            description: 'Used for SEO meta description',
         }),
         defineField({
             name: 'headerCta',
             title: 'Header Button Text',
             type: 'string',
-            description: 'Text for the button in the header (e.g., "Get a Free Mockup")',
+            group: 'header',
+            description: '💡 The button in the top-right corner. Example: "Get a Free Mockup"',
         }),
+
+        // Section Titles
         defineField({
             name: 'sectionTitles',
-            title: 'Section Titles',
+            title: 'Section Headings',
             type: 'object',
-            description: 'Edit the main heading for each section',
+            group: 'sections',
+            description: '💡 Change the main heading for each section of your website',
             fields: [
-                { name: 'howItWorks', title: 'How It Works Section', type: 'string' },
-                { name: 'whatsIncluded', title: "What's Included Section", type: 'string' },
-                { name: 'whyUs', title: 'Why Us Section', type: 'string' },
-                { name: 'examples', title: 'Examples Section', type: 'string' },
-                { name: 'examplesSubtitle', title: 'Examples Subtitle', type: 'string' },
-                { name: 'contact', title: 'Contact Section', type: 'string' },
-                { name: 'contactSubtitle', title: 'Contact Subtitle', type: 'string' },
+                {
+                    name: 'howItWorks',
+                    title: '"How It Works" Heading',
+                    type: 'string',
+                    description: 'Currently: "Three steps to a site you\'re proud of"'
+                },
+                {
+                    name: 'whatsIncluded',
+                    title: '"Features" Heading',
+                    type: 'string',
+                    description: 'Currently: "Everything you need. Nothing you don\'t."'
+                },
+                {
+                    name: 'whyUs',
+                    title: '"Why Choose Us" Heading',
+                    type: 'string',
+                    description: 'Currently: "Straightforward redesigns for busy business owners"'
+                },
+                {
+                    name: 'examples',
+                    title: '"Examples" Heading',
+                    type: 'string'
+                },
+                {
+                    name: 'examplesSubtitle',
+                    title: '"Examples" Subtitle',
+                    type: 'string'
+                },
+                {
+                    name: 'contact',
+                    title: '"Contact" Heading',
+                    type: 'string'
+                },
+                {
+                    name: 'contactSubtitle',
+                    title: '"Contact" Subtitle',
+                    type: 'string'
+                },
             ],
+        }),
+
+        // SEO
+        defineField({
+            name: 'siteDescription',
+            title: 'SEO Description',
+            type: 'text',
+            rows: 2,
+            group: 'seo',
+            description: '💡 This appears in Google search results. 1-2 sentences about your business.',
         }),
     ],
     preview: {
         prepare() {
-            return { title: 'Site Settings' }
+            return { title: '⚙️ Website Settings' }
         },
     },
 })

@@ -9,25 +9,25 @@ export default defineType({
             name: 'copyrightText',
             title: 'Copyright Text',
             type: 'string',
-            description: 'e.g., "© 2026 Wolfe Studios. All rights reserved."',
+            description: '💡 Example: "© 2026 Wolfe Studios. All rights reserved."',
         }),
         defineField({
             name: 'contactPrompt',
             title: 'Contact Prompt',
             type: 'string',
-            description: 'Text before the email (e.g., "Questions?")',
+            description: '💡 Text before your email. Example: "Questions?"',
         }),
         defineField({
             name: 'contactEmail',
             title: 'Contact Email',
             type: 'string',
-            description: 'Email address to display',
+            description: '💡 Your email address for inquiries',
             validation: (Rule) => Rule.email(),
         }),
     ],
     preview: {
         prepare() {
-            return { title: 'Footer' }
+            return { title: '📝 Footer' }
         },
     },
 })

@@ -9,14 +9,14 @@ export default defineType({
             name: 'text',
             title: 'Feature Text',
             type: 'string',
-            description: 'Short text describing this feature (e.g., "Custom mobile-first design")',
+            description: '💡 What\'s included? Example: "Custom mobile-first design"',
             validation: (Rule) => Rule.required().max(60),
         }),
         defineField({
             name: 'order',
             title: 'Display Order',
             type: 'number',
-            description: 'Order in the list (1 = first)',
+            description: '💡 Which position in the list? (1 = first, 2 = second, etc.)',
             validation: (Rule) => Rule.required(),
         }),
     ],
@@ -34,8 +34,7 @@ export default defineType({
         },
         prepare({ title, order }) {
             return {
-                title: title,
-                subtitle: `Order: ${order}`,
+                title: `${order}. ${title}`,
             }
         },
     },
