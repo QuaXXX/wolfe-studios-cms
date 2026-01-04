@@ -4,6 +4,7 @@ export default defineType({
     name: 'footer',
     title: 'Footer',
     type: 'document',
+    liveEdit: true,
     fields: [
         defineField({
             name: 'copyrightText',

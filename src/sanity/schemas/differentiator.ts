@@ -4,6 +4,7 @@ export default defineType({
     name: 'differentiator',
     title: 'Why Choose Us',
     type: 'document',
+    liveEdit: true,
     fields: [
         defineField({
             name: 'title',

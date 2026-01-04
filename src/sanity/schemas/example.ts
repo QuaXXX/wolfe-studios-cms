@@ -4,6 +4,7 @@ export default defineType({
     name: 'example',
     title: 'Before/After Example',
     type: 'document',
+    liveEdit: true,
     fields: [
         defineField({
             name: 'title',

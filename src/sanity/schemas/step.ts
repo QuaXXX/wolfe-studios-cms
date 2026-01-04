@@ -4,6 +4,7 @@ export default defineType({
     name: 'step',
     title: 'How It Works Step',
     type: 'document',
+    liveEdit: true,
     fields: [
         defineField({
             name: 'stepNumber',
